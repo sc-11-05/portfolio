@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@font-face{
+  font-family: 'BlueWinter';
+  src: url(..\src\assets\fonts\BlueWinter.ttf);
+}
+
+@font-face{
+  font-family: 'SuperAmore';
+  src: url(..\src\assets\fonts\SuperAmore.ttf);
+}
+

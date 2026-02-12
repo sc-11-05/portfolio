@@ -1,0 +1,195 @@
+/* ========== CONTAINER ========== */
+.nav-bar-container {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+  background-color: transparent;
+}
+
+/* ========== NAV BAR ========== */
+.nav-bar {
+  position: relative;
+  max-width: 1400;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 90vw;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  background-color: transparent;
+  position: relative;
+}
+
+/* ========== LOGO ========== */
+.nav-logo h1 a {
+  font-family: "BlueWinter";
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-logo h1{
+  display: inline-block;
+}
+
+.nav-logo h1:hover {
+  animation: shake 2s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateY(-10px); }
+  25% { transform: translateY(10px); }
+  50% { transform: translateY(-10px); }
+  75% { transform: translateY(10px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ========== LINKS ========== */
+.nav-links-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-link a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: font-size 0.3s ease;
+}
+
+.nav-link a::before,
+.nav-link a::after {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link a::before {
+  content: "(";
+  left: -12px;
+  transform: translateX(5px);
+}
+
+.nav-link a::after {
+  content: ")";
+  right: -12px;
+  transform: translateX(-5px);
+}
+
+.nav-link a:hover{
+  font-size: 1.2rem;
+}
+
+.nav-link a:hover::before,
+.nav-link a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#connect-btn {
+  font-family: "SuperAmore";
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  color: rgb(0, 162, 243);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#connect-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 2px black;
+}
+
+
+.mobile-toggle,
+.mobile-connect {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-logo h1:hover {
+  animation: none;
+}
+  .mobile-connect {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+
+  .desktop-connect {
+    display: none;
+  }
+
+  #connect-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+    z-index: 9000;
+  }
+
+  .mobile-toggle.open {
+    transform: rotate(180deg);
+  }
+
+  /* dropdown menu */
+  .nav-links-container {
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 90vw;
+    background-color: rgb(127, 190, 239);
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    pointer-events: none;
+    z-index: 10;
+    border: 2px solid white;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    overflow: hidden;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      max-height 0.35s ease;
+  }
+
+  .nav-links-container.open {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 400px; /* enough for links */
+    pointer-events: auto;
+  }
+}
+

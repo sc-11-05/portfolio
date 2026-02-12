@@ -1,0 +1,290 @@
+.hero-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(49, 155, 236),
+        rgb(127, 190, 239)
+    );
+}
+
+.hero-component{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 8rem;
+    align-items: center;
+}
+
+
+.typewriter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.typewriter-text{
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    min-height: 5rem;
+}
+
+.cursor{
+    margin-left: 4px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,50%,100% { opacity: 1; }
+    25%,75% { opacity: 0; }
+}
+
+.typewriter p{
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    max-width: 420px;
+    color: rgba(17, 48, 79, 0.75);
+}
+
+.hero-character{
+    position: relative;
+}
+
+.hero-face{
+    height: 80vh;
+    max-height: 600px;
+    width: auto;
+    transition: transform 0.5s ease;
+}
+
+.hero-face:hover{
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 40px rgba(255,255,255,0.25));
+}
+
+
+.eye{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.eye.left{
+    top: 37.5%;
+    left: 42%;
+}
+
+.eye.right{
+    top: 37%;
+    left: 53%;
+}
+
+.pupil{
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    transition: transform 0.08s linear;
+}
+
+@media (max-width: 768px){
+    .hero-component{
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+        text-align: center;
+    }
+
+    .typewriter{
+        align-items: center;
+    }
+
+    .typewriter-text{
+        font-size: 2.4rem;
+        min-height: 3.6rem;
+    }
+
+    .typewriter p{
+        max-width: 90%;
+    }
+
+    .hero-face{
+        height: auto;
+        max-height: 45vh;
+        width: 100%;
+        transform: none;
+    }
+
+    .eye{
+        display: none;
+    }
+}
+
+
+.menu-open .cursor{
+    display: none;
+}
+
+
+.hero-socials{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-pill{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    width: 48px;
+    height: 48px;
+    padding: 0 14px;
+
+    border-radius: 999px;
+    background: white;
+    overflow: hidden;
+    text-decoration: none;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.5s ease;
+}
+
+.social-pill img{
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    transition: filter 0.3s ease;
+}
+
+.social-pill span{
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.social-pill:hover{
+    width: 160px;
+}
+
+.social-pill:hover span{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.social-pill.instagram:hover{
+    background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af
+    );
+    color: white;
+
+}
+
+.social-pill.linkedin:hover{
+    background: #0077b5;
+    color: white;
+}
+
+.social-pill.twitter:hover{
+    background: #232627;
+    color: white;
+}
+
+.social-pill.github:hover{
+    background: #24292e;
+    color: white;
+}
+
+.social-pill:hover img{
+    filter: invert(1);
+}
+
+.social-pill.instagram{
+    background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af
+    );
+    color: white;
+    }
+
+    .social-pill.linkedin{
+        background: #0077b5;
+        color: white;
+    }
+
+    .social-pill.twitter{
+        background: #232627;
+        color: white;
+    }
+
+    .social-pill.github{
+        background: #24292e;
+        color: white;
+    }
+    
+    .social-pill img{
+        filter: invert(1);
+    }
+
+@media (max-width: 768px){
+    .social-pill{
+        width: 48px !important;
+        border: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-pill span{
+        display: none;
+    }
+
+    .social-pill.instagram{
+    background: linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af
+    );
+    color: white;
+    }
+
+    .social-pill.linkedin{
+        background: #0077b5;
+        color: white;
+    }
+
+    .social-pill.twitter{
+        background: #232627;
+        color: white;
+    }
+
+    .social-pill.github{
+        background: #24292e;
+        color: white;
+    }
+    
+    .social-pill img{
+        filter: invert(1);
+    }
+
+    
+}
